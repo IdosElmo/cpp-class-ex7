@@ -6,6 +6,8 @@ using namespace std;
 
 #include "Board.h"
 
+        Board::Board(){
+        }
 
         Board::Board(const int squer){
             this->squer = squer;
