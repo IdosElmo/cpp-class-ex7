@@ -18,6 +18,8 @@ using namespace std;
 class Board {
     public:
         
+        Board();
+    
         Board(const int squer);
         
         Board(const Board& board); 
