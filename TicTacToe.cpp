@@ -6,36 +6,40 @@
       	gameBoard.setBoard(board_size);
  }
  
- void TicTacToe::play(Player& player1, Player& player2){
+void TicTacToe::play(Player& player1, Player& player2){
  	
-
-     win = &player2;
+	//incase of tie. player2 is a defualt winner.
+    win = &player2;
      
-     bool gameIsRunning = true;
+    int count = 0;
+    int attempts = gameBoard.size() * gameBoard.size();
      
-     player1.setChar('X');
-     player2.setChar('O');
+    player1.setChar('X');
+    player2.setChar('O');
      
-     while(gameIsRunning){
+    while(count < attempts){
          
-         //player1's turn
-         gameBoard[player1.play(gameBoard)] = 'X';
+        //player1's turn
+        gameBoard[player1.play(gameBoard)] = 'X';
          
-         if(checkForWin(gameBoard) == 1){
-            win = &player1; 
-            gameIsRunning = false;
-            break;
-         }
+        if(checkForWin(gameBoard) == 1){
+           win = &player1; 
+           //gameIsRunning = false;
+           return;
+        }
+        count++;
          
-         //player2's turn
-         gameBoard[player2.play(gameBoard)] = 'O';
+        //player2's turn
+        gameBoard[player2.play(gameBoard)] = 'O';
          
-         if(checkForWin(gameBoard) == 2){
-            win = &player2;
-            gameIsRunning = false;
-         }
-     }
- }
+        if(checkForWin(gameBoard) == 2){
+           win = &player2;
+           //gameIsRunning = false;
+           return;
+        }
+        count++;
+    }
+}
 
 
 //1 for 'X' - player1
