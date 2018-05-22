@@ -44,7 +44,7 @@ void TicTacToe::play(Player& player1, Player& player2){
 	    	//incase of tie. player2 is a defualt winner.
     		win = &player2;
         	return;
-        }return;
+        }
         else{
         	win = &player1;
         	return;
@@ -52,8 +52,7 @@ void TicTacToe::play(Player& player1, Player& player2){
         count++;
         
     }
-    	//incase of tie. player2 is a defualt winner.
-    	win = &player2;
+
 }
 
 
