@@ -32,14 +32,18 @@ class TicTacToe {
     protected:
 
     private:
+    
+        bool turnIsLegal(Player& player);
             
-        int checkForWin( Board& board);
+        int checkForWin(Board& board);
         
-        int checkColVictory( Board& board);
+        int checkColVictory(Board& board);
         
-        int checkDiagVictory( Board& board);
+        int checkMainDiagVictory(Board& board);
         
-        int checkRowVictory( Board& board);
+        int checkSecDiagVictory(Board& board);
+        
+        int checkRowVictory(Board& board);
 
         //Variables of the object.
         
