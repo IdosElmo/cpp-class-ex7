@@ -17,16 +17,17 @@ using namespace std;
 
 class Board {
     public:
+    
         
         Board();
-    
+        
         Board(const int squer);
         
         Board(const Board& board); 
         
         ~Board();
         
-        Board& operator= (char Char);
+        const Board& operator= (char Char) const;
         
         Board& operator= (const Board& board);
 
