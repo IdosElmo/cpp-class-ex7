@@ -6,8 +6,10 @@ using namespace std;
 
 #include "Board.h"
 
-        Board::Board(){
-        }
+Board::Board(){
+    
+}
+
 
         Board::Board(const int squer){
             this->squer = squer;
@@ -56,7 +58,7 @@ Board::~Board(){
 }             
 
 
-    Board& Board::operator= (char Char){
+   const Board& Board::operator= (char Char) const{
         if(Char != '.' && Char != 'X' && Char != 'O')
         throw IllegalCharException(Char);
        
